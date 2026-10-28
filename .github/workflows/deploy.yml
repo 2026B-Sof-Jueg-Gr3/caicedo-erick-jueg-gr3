@@ -1,0 +1,75 @@
+# .github/workflows/deploy.yml
+#
+# Compila el proyecto Vite y publica el contenido de dist/ en GitHub Pages
+# automáticamente en cada push a la rama main (o master).
+#
+# Cómo activar GitHub Pages en tu repo:
+#   Repo → Settings → Pages → Source: "GitHub Actions"
+#
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master   # por si usas master como rama principal
+
+  # Permite ejecutar el workflow manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+# Permisos necesarios para publicar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Solo un despliegue a la vez; cancela el anterior si hay uno en cola
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          # Busca package.json en Juego2/
+          cache-dependency-path: Juego2/package-lock.json
+
+      - name: Instalar dependencias
+        working-directory: Juego2
+        run: npm ci
+
+      - name: Compilar con Vite
+        working-directory: Juego2
+        run: npm run build
+
+      - name: Subir artefacto de Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Sube la carpeta dist/ que generó Vite
+          path: Juego2/dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
