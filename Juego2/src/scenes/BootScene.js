@@ -14,8 +14,8 @@ export default class BootScene extends Phaser.Scene {
 
     this.cameras.main.setBackgroundColor('#0d1b2a');
 
-    const text = this.add.text(width / 2, height / 2, 'Cargando...', {
-      fontSize: '28px',
+    const text = this.add.text(width / 2, height / 2, 'Cargando Need for Speed Temu´s Edition...', {
+      fontSize: '24px',
       fontFamily: 'Arial, sans-serif',
       color: '#ffffff',
       alpha: 0,

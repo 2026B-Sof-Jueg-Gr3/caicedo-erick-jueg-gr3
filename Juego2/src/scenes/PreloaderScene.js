@@ -18,6 +18,11 @@ export default class PreloaderScene extends Phaser.Scene {
     this._generateGrassTexture();
     this._generateAsphaltTexture();
     this._generateCarTexture();
+    this._generateTemuCarTexture();
+    this._generateSparkTexture();
+    this._generateSmokeTexture();
+    this._generateRockTexture();
+    this._generatePowerupTextures();
     this._generateTreeTexture();
     this._generateGoalTexture();
     this._generateButtonTextures();
@@ -104,6 +109,229 @@ export default class PreloaderScene extends Phaser.Scene {
 
     g.generateTexture('car', W, H);
     g.destroy();
+  }
+
+  /** 42×74 top-down police/patrol car (Temu Orange with TEMU logo) */
+  _generateTemuCarTexture() {
+    const W = 42, H = 74;
+    const ct = this.textures.createCanvas('temuCar', W, H);
+    const ctx = ct.context;
+
+    const drawRoundRect = (x, y, w, h, r) => {
+      if (ctx.roundRect) {
+        ctx.beginPath();
+        ctx.roundRect(x, y, w, h, r);
+      } else {
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx.lineTo(x + w, y + h - r);
+        ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        ctx.lineTo(x + r, y + h);
+        ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+        ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+        ctx.closePath();
+      }
+    };
+
+    // Shadow
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+    drawRoundRect(2, 4, W - 4, H - 4, 8);
+    ctx.fill();
+
+    // Wheels (Black with hubs)
+    ctx.fillStyle = '#111111';
+    ctx.fillRect(0, 10, 5, 14);
+    ctx.fillRect(0, H - 24, 5, 14);
+    ctx.fillRect(W - 5, 10, 5, 14);
+    ctx.fillRect(W - 5, H - 24, 5, 14);
+
+    // Silver rims
+    ctx.fillStyle = '#888888';
+    ctx.fillRect(1, 14, 3, 6);
+    ctx.fillRect(1, H - 20, 3, 6);
+    ctx.fillRect(W - 4, 14, 3, 6);
+    ctx.fillRect(W - 4, H - 20, 3, 6);
+
+    // Main Body: Official Temu Orange (#ff5000)
+    ctx.fillStyle = '#ff5000';
+    drawRoundRect(4, 4, W - 8, H - 8, 8);
+    ctx.fill();
+
+    // Outer contour border
+    ctx.strokeStyle = '#ff7733';
+    ctx.lineWidth = 1.5;
+    drawRoundRect(4, 4, W - 8, H - 8, 8);
+    ctx.stroke();
+
+    // Sport side skirts
+    ctx.fillStyle = '#d93d00';
+    ctx.fillRect(4, 26, 3, 24);
+    ctx.fillRect(W - 7, 26, 3, 24);
+
+    // Front Windshield (dark tinted)
+    ctx.fillStyle = '#1e293b';
+    drawRoundRect(8, 14, W - 16, 13, 3);
+    ctx.fill();
+
+    // Glass glare line
+    ctx.strokeStyle = '#60a5fa';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(11, 17);
+    ctx.lineTo(24, 17);
+    ctx.stroke();
+
+    // Rear Window
+    ctx.fillStyle = '#1e293b';
+    drawRoundRect(8, H - 24, W - 16, 10, 3);
+    ctx.fill();
+
+    // White badge on roof for crisp TEMU lettering
+    ctx.fillStyle = '#ffffff';
+    drawRoundRect(6, 33, W - 12, 16, 3);
+    ctx.fill();
+
+    // Crisp "TEMU" Logo in bold orange
+    ctx.fillStyle = '#ff5000';
+    ctx.font = '900 10px "Arial Black", Impact, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('TEMU', W / 2, 42);
+
+    // Police / Pursuit Siren Lightbar (blue & red)
+    ctx.fillStyle = '#0066ff';
+    ctx.fillRect(10, 27, 7, 4);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(18, 27, 6, 4);
+    ctx.fillStyle = '#ff1100';
+    ctx.fillRect(25, 27, 7, 4);
+
+    // Pursuit LED Headlights
+    ctx.fillStyle = '#ffffcc';
+    ctx.fillRect(8, 4, 7, 4);
+    ctx.fillRect(W - 15, 4, 7, 4);
+
+    // Front intake grille
+    ctx.fillStyle = '#222222';
+    ctx.fillRect(17, 4, W - 34, 3);
+
+    // Taillights
+    ctx.fillStyle = '#ff1100';
+    ctx.fillRect(8, H - 8, 8, 4);
+    ctx.fillRect(W - 16, H - 8, 8, 4);
+
+    // Rear spoiler
+    ctx.fillStyle = '#b32400';
+    ctx.fillRect(6, H - 5, W - 12, 3);
+
+    ct.refresh();
+  }
+
+  /** Spark particle for collisions */
+  _generateSparkTexture() {
+    const g = this.make.graphics({ x: 0, y: 0, add: false });
+    g.fillStyle(0xffdd44, 1);
+    g.fillCircle(4, 4, 4);
+    g.fillStyle(0xffffff, 1);
+    g.fillCircle(4, 4, 2);
+    g.generateTexture('spark', 8, 8);
+    g.destroy();
+  }
+
+  /** Drift / skid smoke puff */
+  _generateSmokeTexture() {
+    const g = this.make.graphics({ x: 0, y: 0, add: false });
+    g.fillStyle(0xcccccc, 0.6);
+    g.fillCircle(8, 8, 8);
+    g.fillStyle(0xffffff, 0.8);
+    g.fillCircle(6, 6, 5);
+    g.generateTexture('smoke', 16, 16);
+    g.destroy();
+  }
+
+  /** 36×36 boulder / rock texture */
+  _generateRockTexture() {
+    const g = this.make.graphics({ x: 0, y: 0, add: false });
+    g.fillStyle(0x000000, 0.4);
+    g.fillEllipse(18, 22, 28, 16);
+    g.fillStyle(0x555555, 1);
+    g.fillCircle(18, 17, 14);
+    g.fillStyle(0x777777, 1);
+    g.fillCircle(15, 14, 10);
+    g.fillStyle(0x999999, 1);
+    g.fillCircle(13, 12, 6);
+    g.fillStyle(0x333333, 1);
+    g.fillCircle(22, 20, 5);
+    g.generateTexture('rock', 36, 36);
+    g.destroy();
+  }
+
+  /** Power-ups, comodines and pickups */
+  _generatePowerupTextures() {
+    // 1. Turbo boost (⚡ cyan/yellow)
+    const ctTurbo = this.textures.createCanvas('pickup_turbo', 36, 36);
+    const ctxT = ctTurbo.context;
+    ctxT.fillStyle = '#00e5ff';
+    ctxT.beginPath();
+    ctxT.arc(18, 18, 16, 0, Math.PI * 2);
+    ctxT.fill();
+    ctxT.strokeStyle = '#ffffff';
+    ctxT.lineWidth = 2;
+    ctxT.stroke();
+    ctxT.font = 'bold 20px Arial';
+    ctxT.textAlign = 'center';
+    ctxT.textBaseline = 'middle';
+    ctxT.fillText('⚡', 18, 19);
+    ctTurbo.refresh();
+
+    // 2. Slow / Oil trap pickup (🐌 purple/black sludge)
+    const ctSlow = this.textures.createCanvas('pickup_slow', 36, 36);
+    const ctxS = ctSlow.context;
+    ctxS.fillStyle = '#6a0dad';
+    ctxS.beginPath();
+    ctxS.arc(18, 18, 16, 0, Math.PI * 2);
+    ctxS.fill();
+    ctxS.strokeStyle = '#ff44aa';
+    ctxS.lineWidth = 2;
+    ctxS.stroke();
+    ctxS.font = 'bold 18px Arial';
+    ctxS.textAlign = 'center';
+    ctxS.textBaseline = 'middle';
+    ctxS.fillText('🐌', 18, 19);
+    ctSlow.refresh();
+
+    // 3. Repair / Health pickup (🔧 green)
+    const ctRep = this.textures.createCanvas('pickup_repair', 36, 36);
+    const ctxR = ctRep.context;
+    ctxR.fillStyle = '#00c853';
+    ctxR.beginPath();
+    ctxR.arc(18, 18, 16, 0, Math.PI * 2);
+    ctxR.fill();
+    ctxR.strokeStyle = '#ffffff';
+    ctxR.lineWidth = 2;
+    ctxR.stroke();
+    ctxR.font = 'bold 18px Arial';
+    ctxR.textAlign = 'center';
+    ctxR.textBaseline = 'middle';
+    ctxR.fillText('🔧', 18, 19);
+    ctRep.refresh();
+
+    // 4. Temu bomb box (💣 trap dropped by Temu)
+    const ctBomb = this.textures.createCanvas('temu_bomb', 34, 34);
+    const ctxB = ctBomb.context;
+    ctxB.fillStyle = '#ff5000';
+    ctxB.fillRect(3, 5, 28, 26);
+    ctxB.strokeStyle = '#ffffff';
+    ctxB.lineWidth = 2;
+    ctxB.strokeRect(3, 5, 28, 26);
+    ctxB.font = 'bold 16px Arial';
+    ctxB.textAlign = 'center';
+    ctxB.textBaseline = 'middle';
+    ctxB.fillText('💣', 17, 18);
+    ctBomb.refresh();
   }
 
   /** 28×28 tree sprite (overhead view) */

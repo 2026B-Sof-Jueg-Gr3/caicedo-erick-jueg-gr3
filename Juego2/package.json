@@ -1,7 +1,7 @@
 {
-  "name": "juego2-topdown-racer",
+  "name": "need-for-speed-temus-edition",
   "version": "1.0.0",
-  "description": "Top-down racer game built with Phaser 3 and Vite",
+  "description": "Need for Speed Temu's Edition - Top-down racer game built with Phaser 3 and Vite",
   "type": "module",
   "scripts": {
     "dev": "vite",

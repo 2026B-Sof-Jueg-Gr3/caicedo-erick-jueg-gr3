@@ -21,47 +21,75 @@ export default class MenuScene extends Phaser.Scene {
     stripe.fillRect(width / 2 - 3, 0, 6, height);
 
     // ── Title ─────────────────────────────────────────────────────────────────
-    const titleShadow = this.add.text(width / 2 + 4, height * 0.22 + 4, 'CARRERA\nTOP-DOWN', {
-      fontSize: '72px',
+    const titleShadow = this.add.text(width / 2 + 4, height * 0.20 + 4, 'NEED FOR SPEED\nTEMU´S EDITION', {
+      fontSize: '56px',
       fontFamily: 'Impact, Arial Black, sans-serif',
       color: '#000000',
       align: 'center',
-      lineSpacing: 8,
-    }).setOrigin(0.5).setAlpha(0.5);
+      lineSpacing: 6,
+    }).setOrigin(0.5).setAlpha(0.6);
 
-    const title = this.add.text(width / 2, height * 0.22, 'CARRERA\nTOP-DOWN', {
-      fontSize: '72px',
+    const title = this.add.text(width / 2, height * 0.20, 'NEED FOR SPEED\nTEMU´S EDITION', {
+      fontSize: '56px',
       fontFamily: 'Impact, Arial Black, sans-serif',
-      color: '#ff4400',
+      color: '#ff5500',
       stroke: '#ffffff',
-      strokeThickness: 3,
+      strokeThickness: 4,
       align: 'center',
-      lineSpacing: 8,
+      lineSpacing: 6,
     }).setOrigin(0.5);
 
-    // ── Subtitle ──────────────────────────────────────────────────────────────
-    this.add.text(width / 2, height * 0.42, '¡Llega a la meta lo más rápido posible!', {
-      fontSize: '22px',
+    // ── Subtitle & Lore ────────────────────────────────────────────────────────
+    this.add.text(width / 2, height * 0.38, '¡Escapa de la patrulla Temu a toda velocidad y cruza la meta!', {
+      fontSize: '20px',
       fontFamily: 'Arial, sans-serif',
-      color: '#ccddcc',
+      color: '#ffeedd',
+      fontStyle: 'bold',
     }).setOrigin(0.5);
 
     // ── Controls hint ─────────────────────────────────────────────────────────
-    this.add.text(width / 2, height * 0.52, 'Controles: WASD  /  Flechas  /  Botones táctiles', {
-      fontSize: '17px',
+    this.add.text(width / 2, height * 0.46, 'Controles: WASD  /  Flechas  /  Botones táctiles', {
+      fontSize: '16px',
       fontFamily: 'Arial, sans-serif',
       color: '#aabbaa',
     }).setOrigin(0.5);
 
-    // ── Mini car preview ──────────────────────────────────────────────────────
-    const carPreview = this.add.image(width / 2, height * 0.64, 'car')
-      .setScale(1.4)
-      .setAngle(-90); // pointing right for cosmetic display
+    this.add.text(width / 2, height * 0.51, '⚠️ ¡Si el auto Temu te embiste 5 veces, serás interceptado!', {
+      fontSize: '15px',
+      fontFamily: 'Arial, sans-serif',
+      color: '#ff9966',
+    }).setOrigin(0.5);
 
+    // ── Mini car chase preview ────────────────────────────────────────────────
+    // Chased player car
+    const carPreview = this.add.image(width / 2 + 65, height * 0.64, 'car')
+      .setScale(1.3)
+      .setAngle(-90);
+
+    // Chasing Temu orange patrol car
+    const temuPreview = this.add.image(width / 2 - 65, height * 0.64, 'temuCar')
+      .setScale(1.3)
+      .setAngle(-90);
+
+    // Flashing siren light effects on Temu preview
+    const sirenGlow = this.add.graphics();
+    let sirenToggle = false;
+    this.time.addEvent({
+      delay: 150,
+      loop: true,
+      callback: () => {
+        sirenToggle = !sirenToggle;
+        sirenGlow.clear();
+        sirenGlow.fillStyle(sirenToggle ? 0x0088ff : 0xff1100, 0.45);
+        sirenGlow.fillCircle(temuPreview.x, temuPreview.y, 24);
+      },
+    });
+
+    // Chase swaying animation
     this.tweens.add({
-      targets: carPreview,
-      x: width / 2 + 30,
-      duration: 800,
+      targets: [carPreview, temuPreview],
+      x: '+=35',
+      duration: 850,
       yoyo: true,
       repeat: -1,
       ease: 'Sine.easeInOut',
@@ -99,6 +127,34 @@ export default class MenuScene extends Phaser.Scene {
     this.input.keyboard.once('keydown-ENTER', () => this._startGame());
     this.input.keyboard.once('keydown-SPACE', () => this._startGame());
 
+    // ── Historia button (debajo del botón principal) ───────────────────────────
+    const histBg = this.add.graphics();
+    const histX = width / 2, histY = height * 0.83 + 70;
+    const histW = 290, histH = 46, histR = 10;
+
+    const drawHist = (hover) => {
+      histBg.clear();
+      histBg.fillStyle(hover ? 0x661111 : 0x3d0a0a, 1);
+      histBg.fillRoundedRect(histX - histW / 2, histY - histH / 2, histW, histH, histR);
+      histBg.lineStyle(2, hover ? 0xff6666 : 0xaa3333, 1);
+      histBg.strokeRoundedRect(histX - histW / 2, histY - histH / 2, histW, histH, histR);
+    };
+    drawHist(false);
+
+    const histText = this.add.text(histX, histY, '💔  HISTORIA: El Precio de una Vida', {
+      fontSize: '16px',
+      fontFamily: 'Arial, sans-serif',
+      color: '#ffcccc',
+      fontStyle: 'bold',
+    }).setOrigin(0.5);
+
+    const histZone = this.add.zone(histX, histY, histW, histH)
+      .setInteractive({ useHandCursor: true });
+
+    histZone.on('pointerover', () => { drawHist(true); histText.setScale(1.04); });
+    histZone.on('pointerout',  () => { drawHist(false); histText.setScale(1); });
+    histZone.on('pointerdown', () => this._goToStory());
+
     // ── Pulse animation on button ─────────────────────────────────────────────
     this.tweens.add({
       targets: btnText,
@@ -125,6 +181,13 @@ export default class MenuScene extends Phaser.Scene {
     this.cameras.main.fadeOut(400, 0, 0, 0);
     this.cameras.main.once('camerafadeoutcomplete', () => {
       this.scene.start('GameScene');
+    });
+  }
+
+  _goToStory() {
+    this.cameras.main.fadeOut(350, 0, 0, 0);
+    this.cameras.main.once('camerafadeoutcomplete', () => {
+      this.scene.start('StoryScene');
     });
   }
 
