@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Need for Speed: Temu's Edition &mdash; Landing Page Oficial</title>
+  <meta name="description" content="Landing page oficial del videojuego Need for Speed: Temu's Edition. Conoce la historia, especificaciones t&eacute;cnicas, mec&aacute;nicas y juega gratis en tu navegador.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ff5500;
+      --primary-glow: rgba(255, 85, 0, 0.45);
+      --secondary: #00e5ff;
+      --secondary-glow: rgba(0, 229, 255, 0.4);
+      --accent: #ffd600;
+      --danger: #ff1744;
+      --success: #00e676;
+      --dark-bg: #07090e;
+      --card-bg: rgba(16, 22, 34, 0.78);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 85, 0, 0.15), transparent 45%),
+        radial-gradient(circle at 10% 40%, rgba(0, 229, 255, 0.08), transparent 35%),
+        radial-gradient(circle at 90% 70%, rgba(255, 23, 68, 0.08), transparent 40%),
+        linear-gradient(to bottom, #07090e, #0c1017, #07090e);
+      background-attachment: fixed;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090c12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ff5500;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff7733;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(7, 9, 14, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #ff5500, #ff1744);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .brand-text {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+      color: #fff;
+    }
+
+    .brand-text span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    }
+
+    .btn-nav-play {
+      background: linear-gradient(135deg, var(--primary), #e63900);
+      color: #fff !important;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem !important;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 16px var(--primary-glow);
+      transition: transform 0.2s, box-shadow 0.2s !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-nav-play:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(255, 85, 0, 0.7) !important;
+    }
+
+    section {
+      padding: 90px 24px;
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+      background: rgba(255, 85, 0, 0.1);
+      padding: 4px 14px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 85, 0, 0.3);
+    }
+
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin-bottom: 50px;
+    }
+
+    .hero {
+      padding-top: 150px;
+      padding-bottom: 100px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 90vh;
+    }
+
+    .hero-badge-wrap {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .badge-pill {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-pill.hot {
+      background: rgba(255, 85, 0, 0.15);
+      border-color: rgba(255, 85, 0, 0.5);
+      color: #ff9966;
+    }
+
+    .badge-pill.cyber {
+      background: rgba(0, 229, 255, 0.12);
+      border-color: rgba(0, 229, 255, 0.4);
+      color: #33eeff;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #ff5500 0%, #ff8800 50%, #ffd600 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block;
+      filter: drop-shadow(0 0 25px rgba(255, 85, 0, 0.4));
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      font-weight: 400;
+      border-left: 3px solid var(--primary);
+      padding-left: 16px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .btn-hero-primary {
+      background: linear-gradient(135deg, #ff5500, #ff1744);
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      padding: 16px 36px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 30px rgba(255, 85, 0, 0.55);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(255, 85, 0, 0.75);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 15px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-box h4 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .stat-box h4 span {
+      color: var(--primary);
+    }
+
+    .stat-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-visual {
+      position: relative;
+      background: linear-gradient(180deg, #101522 0%, #0c0f17 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 85, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .visual-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .visual-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .v-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .v-dot.r { background: #ff5f56; }
+    .v-dot.y { background: #ffbd2e; }
+    .v-dot.g { background: #27c93f; }
+
+    .visual-status {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      color: var(--secondary);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--secondary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--secondary);
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.2); }
+      100% { opacity: 0.3; transform: scale(0.9); }
+    }
+
+    .visual-stage {
+      position: relative;
+      height: 380px;
+      background: #171d28;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .road-surface {
+      position: absolute;
+      width: 200px;
+      height: 100%;
+      background: #2a2f3a;
+      border-left: 4px solid #fff;
+      border-right: 4px solid #fff;
+    }
+
+    .road-line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        #ffd600 0px,
+        #ffd600 35px,
+        transparent 35px,
+        transparent 70px
+      );
+      animation: roadScroll 0.8s linear infinite;
+    }
+
+    @keyframes roadScroll {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 70px; }
+    }
+
+    .car-player {
+      position: absolute;
+      bottom: 60px;
+      left: calc(50% - 22px);
+      width: 44px;
+      height: 75px;
+      background: #ff2200;
+      border-radius: 10px 10px 6px 6px;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 15px rgba(255, 34, 0, 0.8);
+      z-index: 10;
+      transition: left 0.3s ease;
+    }
+
+    .car-player::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 6px;
+      right: 6px;
+      height: 20px;
+      background: #1a1a2e;
+      border-radius: 4px;
+    }
+
+    .car-player .nitro-flame {
+      position: absolute;
+      bottom: -18px;
+      left: 12px;
+      width: 16px;
+      height: 18px;
+      background: radial-gradient(circle, #00e5ff, #0044ff, transparent);
+      border-radius: 0 0 8px 8px;
+      animation: nitroBurn 0.15s infinite alternate;
+    }
+
+    @keyframes nitroBurn {
+      0% { height: 14px; opacity: 0.8; }
+      100% { height: 24px; opacity: 1; }
+    }
+
+    .car-police {
+      position: absolute;
+      bottom: 230px;
+      left: calc(50% - 22px);
+      width: 44px;
+      height: 75px;
+      background: #111118;
+      border-radius: 10px 10px 6px 6px;
+      border: 2px solid #f1f5f9;
+      z-index: 9;
+      animation: policeSway 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes policeSway {
+      0% { transform: translateX(-25px); }
+      100% { transform: translateX(25px); }
+    }
+
+    .siren-lights {
+      position: absolute;
+      top: 25px;
+      left: 8px;
+      right: 8px;
+      height: 8px;
+      display: flex;
+    }
+
+    .siren-l {
+      flex: 1;
+      background: #ff0033;
+      border-radius: 2px 0 0 2px;
+      animation: sirenFlashL 0.25s infinite alternate;
+    }
+
+    .siren-r {
+      flex: 1;
+      background: #0066ff;
+      border-radius: 0 2px 2px 0;
+      animation: sirenFlashR 0.25s infinite alternate;
+    }
+
+    @keyframes sirenFlashL {
+      0% { opacity: 0.2; box-shadow: none; }
+      100% { opacity: 1; box-shadow: 0 0 14px #ff0033; }
+    }
+    @keyframes sirenFlashR {
+      0% { opacity: 1; box-shadow: 0 0 14px #0066ff; }
+      100% { opacity: 0.2; box-shadow: none; }
+    }
+
+    .visual-hud {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+    }
+
+    .hud-hp {
+      color: var(--success);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hud-speed {
+      color: var(--accent);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .story-card {
+      background: linear-gradient(135deg, rgba(20, 26, 40, 0.9), rgba(13, 17, 26, 0.95));
+      border: 1px solid rgba(255, 85, 0, 0.25);
+      border-radius: 16px;
+      padding: 40px;
+      position: relative;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+    }
+
+    .story-quote {
+      font-size: 1.35rem;
+      font-style: italic;
+      color: #f1f5f9;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--primary);
+      padding-left: 20px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .story-character {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .story-character:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 85, 0, 0.4);
+    }
+
+    .char-avatar {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .char-name {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .char-role {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .char-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .level-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 30px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 229, 255, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.15);
+    }
+
+    .level-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.06);
+      position: absolute;
+      top: 10px;
+      right: 18px;
+      line-height: 1;
+    }
+
+    .level-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .lvl-1 .level-badge { background: rgba(0, 230, 118, 0.15); color: var(--success); }
+    .lvl-2 .level-badge { background: rgba(0, 229, 255, 0.15); color: var(--secondary); }
+    .lvl-3 .level-badge { background: rgba(255, 23, 68, 0.15); color: var(--danger); }
+
+    .level-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .level-features {
+      list-style: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .level-features li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: left;
+      transition: all 0.3s;
+    }
+
+    .feature-box:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .feature-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .specs-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .specs-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .specs-card.recommended {
+      border-color: rgba(255, 85, 0, 0.4);
+      box-shadow: 0 0 30px rgba(255, 85, 0, 0.1);
+    }
+
+    .specs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .specs-header h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .specs-tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .specs-tag.min { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .specs-tag.rec { background: rgba(255, 85, 0, 0.2); color: var(--primary); }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .specs-table td {
+      padding: 12px 0;
+      font-size: 0.95rem;
+    }
+
+    .specs-table td.spec-name {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 42%;
+    }
+
+    .specs-table td.spec-val {
+      color: #fff;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .specs-table td.spec-val span.highlight {
+      color: var(--success);
+    }
+
+    .controls-container {
+      background: linear-gradient(135deg, rgba(16, 22, 34, 0.9), rgba(11, 14, 22, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .keys-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .keys-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .key-cap {
+      width: 58px;
+      height: 58px;
+      background: linear-gradient(180deg, #2a3447 0%, #172030 100%);
+      border: 2px solid #475569;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #fff;
+      box-shadow: 0 6px 0 #0f172a, 0 10px 15px rgba(0,0,0,0.4);
+      transition: all 0.15s;
+    }
+
+    .key-cap span {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .key-cap.active, .key-cap:hover {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #0f172a;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .controls-list {
+      list-style: none;
+    }
+
+    .controls-list li {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .control-badge {
+      background: rgba(255, 85, 0, 0.15);
+      border: 1px solid rgba(255, 85, 0, 0.3);
+      color: var(--primary);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .control-text h5 {
+      font-size: 1.05rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .control-text p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .cta-final {
+      text-align: center;
+      padding: 120px 24px;
+      background: 
+        radial-gradient(circle at 50% 50%, rgba(255, 85, 0, 0.22), transparent 60%),
+        linear-gradient(180deg, transparent, rgba(16, 22, 34, 0.9) 30%, #07090e);
+      border-top: 1px solid rgba(255, 85, 0, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .cta-final h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .cta-final p {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-launch-game {
+      background: linear-gradient(135deg, #ff5500 0%, #ff1744 50%, #e60026 100%);
+      color: #ffffff !important;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: 1.6rem;
+      padding: 24px 60px;
+      border-radius: 16px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 40px rgba(255, 85, 0, 0.65), 0 0 25px rgba(255, 23, 68, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+    }
+
+    .btn-launch-game:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 16px 50px rgba(255, 85, 0, 0.85), 0 0 35px rgba(255, 23, 68, 0.6);
+    }
+
+    .btn-launch-game::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: rotate(30deg);
+      animation: buttonShine 3s infinite;
+    }
+
+    @keyframes buttonShine {
+      0% { left: -60%; }
+      20% { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    .cta-subtext {
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-subtext span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    footer {
+      background: #040609;
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 120px;
+        text-align: center;
+      }
+      .hero h1 { font-size: 2.6rem; }
+      .hero-subtitle { border-left: none; padding-left: 0; }
+      .hero-cta-group { justify-content: center; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .story-grid, .levels-grid, .features-grid, .specs-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .controls-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACI&Oacute;N -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">&#127950;&#65039;</div>
+        <div class="brand-text">NFS: <span>TEMU'S ED.</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#niveles">Campa&ntilde;a</a></li>
+        <li><a href="#mecanicas">Mec&aacute;nicas</a></li>
+        <li><a href="#specs">Especificaciones</a></li>
+        <li><a href="#controles">Controles</a></li>
+        <li><a href="#jugar" class="btn-nav-play">&#9654; JUGAR AHORA</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge-wrap">
+        <span class="badge-pill hot">&#128293; LANZAMIENTO OFICIAL</span>
+        <span class="badge-pill cyber">&#9889; MOTOR PHASER 3</span>
+        <span class="badge-pill">&#127918; 0 MB DESCARGA</span>
+      </div>
+
+      <h1>
+        NEED FOR SPEED
+        <span class="gradient-text">TEMU'S EDITION</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Una carrera desesperada bajo la lluvia nocturna por la vida de una hija enferma. &iquest;Podr&aacute;s escapar de la implacable patrulla corporativa y entregar el suero vital antes del amanecer?
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#jugar" class="btn-hero-primary">
+          <span>&#128640; JUGAR AHORA GRATIS</span>
+        </a>
+        <a href="#specs" class="btn-hero-secondary">
+          <span>&#128203; Ver Especificaciones</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-box">
+          <h4>60 <span>FPS</span></h4>
+          <p>Renderizado Fluido</p>
+        </div>
+        <div class="stat-box">
+          <h4>3 <span>NIVELES</span></h4>
+          <p>Campa&ntilde;a &Eacute;pica</p>
+        </div>
+        <div class="stat-box">
+          <h4>100% <span>WEB</span></h4>
+          <p>Sin Instalaci&oacute;n</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREVIEW / SHOWCASE SIMULADO -->
+    <div class="hero-visual">
+      <div class="visual-header">
+        <div class="visual-dots">
+          <div class="v-dot r"></div>
+          <div class="v-dot y"></div>
+          <div class="v-dot g"></div>
+        </div>
+        <div class="visual-status">
+          <span class="live-dot"></span>
+          <span>SIMULACI&Oacute;N EN TIEMPO REAL</span>
+        </div>
+      </div>
+
+      <div class="visual-stage">
+        <!-- Pista animada -->
+        <div class="road-surface">
+          <div class="road-line"></div>
+        </div>
+
+        <!-- Patrulla de Don Temu -->
+        <div class="car-police">
+          <div class="siren-lights">
+            <div class="siren-l"></div>
+            <div class="siren-r"></div>
+          </div>
+        </div>
+
+        <!-- Coche del Jugador -->
+        <div class="car-player" id="interactivePlayerCar">
+          <div class="nitro-flame"></div>
+        </div>
+
+        <!-- HUD en Vivo -->
+        <div class="visual-hud">
+          <div class="hud-hp">&#10084;&#65039; SALUD: 100%</div>
+          <div class="hud-speed">&#9889; 475 PX/S (NITRO)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCI&Oacute;N HISTORIA -->
+  <section id="historia">
+    <div class="section-tag">EL PRECIO DE UNA VIDA</div>
+    <h2 class="section-title">LA &Uacute;LTIMA ESPERANZA EN LA OSCURIDAD</h2>
+    <p class="section-desc">
+      Una narrativa visceral, humana y dram&aacute;tica que desaf&iacute;a tus l&iacute;mites &eacute;ticos y tus reflejos en el asfalto.
+    </p>
+
+    <div class="story-card">
+      <div class="story-quote">
+        &ldquo;El suero bio-sint&eacute;tico pedi&aacute;trico cuesta $45,000 d&oacute;lares. Su hija no tiene cobertura m&eacute;dica... Si no paga antes del amanecer, tendremos que desconectarla.&rdquo;
+      </div>
+      <p style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.8;">
+        Son las <strong>02:14 AM en la Sala de Terapia Intensiva</strong>. Tu peque&ntilde;a hija Sof&iacute;a (6 a&ntilde;os) agoniza ante una neumopat&iacute;a fulminante. Con tu esposa fallecida meses atr&aacute;s, has vendido todo lo que posees y el sistema te dio la espalda. En un almac&eacute;n log&iacute;stico divisas la &uacute;nica cura existente: confiscada por el magnate Don Temu para ser subastada internacionalmente. 
+        <br><br>
+        No eres un criminal, pero un padre desesperado no pide permiso. Tomas el suero y enciendes el motor. La radio estalla con la voz fr&iacute;a del magnate: <em>&ldquo;&iexcl;Hagan pedazos ese auto, que no quede nada!&rdquo;</em>. La carrera de tu vida ha comenzado.
+      </p>
+
+      <div class="story-grid">
+        <div class="story-character">
+          <span class="char-avatar">&#128104;&#8205;&#128103;</span>
+          <div class="char-name">El Padre (T&uacute;)</div>
+          <div class="char-role">Conductor Desesperado</div>
+          <div class="char-desc">Un hombre com&uacute;n empujado al l&iacute;mite absoluto. Conduce un viejo sed&aacute;n rojo con el suero vital en el asiento del copiloto.</div>
+        </div>
+
+        <div class="story-character">
+          <span class="char-avatar">&#128103;&#129657;</span>
+          <div class="char-name">Sof&iacute;a (6 A&ntilde;os)</div>
+          <div class="char-role">La Raz&oacute;n de Luchar</div>
+          <div class="char-desc">Internada en estado cr&iacute;tico. Cada segundo perdido en la pista reduce su d&eacute;bil frecuencia card&iacute;aca hacia el cero.</div>
+        </div>
+
+        <div class="story-character">
+          <span class="char-avatar">&#128110;&#128659;</span>
+          <div class="char-name">Don Temu</div>
+          <div class="char-role">Jefe Implacable</div>
+          <div class="char-desc">Magnate despiadado due&ntilde;o de las patrullas policiales corporativas. Utiliza bombas de demolici&oacute;n y embestidas mortales.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCI&Oacute;N NIVELES / CAMPA&Ntilde;A -->
+  <section id="niveles">
+    <div class="section-tag">CAMPA&Ntilde;A DE 3 ACTOS</div>
+    <h2 class="section-title">DE LA CIUDAD AL HOSPITAL</h2>
+    <p class="section-desc">
+      Tres fases con dificultad incremental, meteorolog&iacute;a din&aacute;mica y trampas de pista dise&ntilde;adas para poner a prueba tu destreza.
+    </p>
+
+    <div class="levels-grid">
+      <div class="level-card lvl-1">
+        <div class="level-num">01</div>
+        <span class="level-badge">Acto 1</span>
+        <h3 class="level-title">City Escape</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Fuga inicial de las bodegas corporativas. Carreteras urbanas estrechas, tr&aacute;fico de obst&aacute;culos y primeros acosos de la patrulla Temu.
+        </p>
+        <ul class="level-features">
+          <li>&#128739;&#65039; Carreteras de asfalto y bermas de hierba</li>
+          <li>&#129704; 8 Rocas y escombros dispersos</li>
+          <li>&#9889; Comodines de turbo iniciales</li>
+        </ul>
+      </div>
+
+      <div class="level-card lvl-2">
+        <div class="level-num">02</div>
+        <span class="level-badge">Acto 2</span>
+        <h3 class="level-title">Rocky Canyon</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Tormenta nocturna severa con lluvia torrencial y rel&aacute;mpagos que ciegan la vista. Curvas cerradas con campos densos de rocas masivas.
+        </p>
+        <ul class="level-features">
+          <li>&#127783;&#65039; Lluvia y destellos de rel&aacute;mpagos</li>
+          <li>&#129704; 18 Obst&aacute;culos pesados en pista</li>
+          <li>&#128680; Sirena Temu con agresi&oacute;n aumentada</li>
+        </ul>
+      </div>
+
+      <div class="level-card lvl-3">
+        <div class="level-num">03</div>
+        <span class="level-badge">Acto 3 &bull; Batalla Final</span>
+        <h3 class="level-title">Hospital Siege</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          El tramo final hacia el hospital. Don Temu desata su furia descargando bombas activas y activando el Super Turbo Ramming Charge.
+        </p>
+        <ul class="level-features">
+          <li>&#128163; Bombardeo en tiempo real de Don Temu</li>
+          <li>&#128640; Embestidas supers&oacute;nicas destructivas</li>
+          <li>&#127937; Meta final con resoluci&oacute;n cinem&aacute;tica</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCI&Oacute;N MEC&Aacute;NICAS & POWER-UPS -->
+  <section id="mecanicas">
+    <div class="section-tag">JUGABILIDAD &amp; COMODINES</div>
+    <h2 class="section-title">DOMINA EL ASFALTO</h2>
+    <p class="section-desc">
+      Aprovecha los comodines estrat&eacute;gicos y domina las leyes de la f&iacute;sica para sobrevivir.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon" style="color: var(--accent);">&#9889;</div>
+        <h4 class="feature-title">Turbo Nitro Boost</h4>
+        <p class="feature-desc">Multiplica tu velocidad por 1.48x alcanzando hasta 475 px/s con estela de fuego ardiente para adelantar a Temu.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon" style="color: var(--success);">&#128295;</div>
+        <h4 class="feature-title">Kit de Reparaci&oacute;n</h4>
+        <p class="feature-desc">Restaura un 20% de integridad estructural a tu veh&iacute;culo tras colisionar con rocas o recibir impactos de bombas.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon" style="color: var(--primary);">&#128718;&#65039;</div>
+        <h4 class="feature-title">Trampa de Aceite</h4>
+        <p class="feature-desc">Reduce la velocidad temporalmente y provoca derrapes si no logras esquivar los fluidos sobre la calzada.</p>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon" style="color: var(--danger);">&#128163;</div>
+        <h4 class="feature-title">Arsenal de Don Temu</h4>
+        <p class="feature-desc">Esquiva las bombas explosivas arrojadas en tu trayectoria y el brutal aceler&oacute;n de embestida policial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESPECIFICACIONES T&Eacute;CNICAS DEL SISTEMA -->
+  <section id="specs">
+    <div class="section-tag">INFORMACI&Oacute;N PARA EL USUARIO</div>
+    <h2 class="section-title">ESPECIFICACIONES T&Eacute;CNICAS</h2>
+    <p class="section-desc">
+      Desarrollado para ofrecer el m&aacute;ximo rendimiento sin descargas ni instalaciones pesadas.
+    </p>
+
+    <div class="specs-wrapper">
+      <!-- M&Iacute;NIMAS -->
+      <div class="specs-card">
+        <div class="specs-header">
+          <h3>REQUISITOS M&Iacute;NIMOS</h3>
+          <span class="specs-tag min">B&aacute;sico</span>
+        </div>
+        <table class="specs-table">
+          <tr>
+            <td class="spec-name">Sistema Operativo</td>
+            <td class="spec-val">Windows 10, macOS, Linux, Android 8+, iOS 13+</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Navegador Web</td>
+            <td class="spec-val">Chrome 85+, Edge 85+, Firefox 80+, Safari 14+</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Procesador (CPU)</td>
+            <td class="spec-val">Dual-Core 1.6 GHz</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Memoria RAM</td>
+            <td class="spec-val">2 GB de memoria RAM libre</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Aceleraci&oacute;n Gr&aacute;fica</td>
+            <td class="spec-val">Soporte b&aacute;sico Canvas 2D / WebGL 1.0</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Espacio en Disco</td>
+            <td class="spec-val"><span class="highlight">0 MB (Ejecuci&oacute;n en RAM)</span></td>
+          </tr>
+          <tr>
+            <td class="spec-name">Dispositivos de Entrada</td>
+            <td class="spec-val">Teclado f&iacute;sico o Pantalla T&aacute;ctil</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- RECOMENDADAS -->
+      <div class="specs-card recommended">
+        <div class="specs-header">
+          <h3>REQUISITOS RECOMENDADOS</h3>
+          <span class="specs-tag rec">&Oacute;ptimo</span>
+        </div>
+        <table class="specs-table">
+          <tr>
+            <td class="spec-name">Sistema Operativo</td>
+            <td class="spec-val">Windows 11 / macOS Monterey / Linux moderno</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Navegador Web</td>
+            <td class="spec-val">Google Chrome o Microsoft Edge (&uacute;ltima versi&oacute;n)</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Procesador (CPU)</td>
+            <td class="spec-val">Quad-Core 2.4 GHz o superior</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Memoria RAM</td>
+            <td class="spec-val">4 GB o m&aacute;s</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Resoluci&oacute;n de Pantalla</td>
+            <td class="spec-val"><span class="highlight">1024 &times; 768 px a 60 Hz+</span></td>
+          </tr>
+          <tr>
+            <td class="spec-name">Motor Gr&aacute;fico</td>
+            <td class="spec-val">Phaser 3.88 Arcade Physics (WebGL acelerado)</td>
+          </tr>
+          <tr>
+            <td class="spec-name">Audio &amp; Sonido</td>
+            <td class="spec-val">Sintetizador Web Audio API (Auriculares est&eacute;reo)</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCI&Oacute;N CONTROLES -->
+  <section id="controles">
+    <div class="section-tag">GU&Iacute;A DEL PILOTO</div>
+    <h2 class="section-title">ESQUEMA DE CONTROLES</h2>
+    <p class="section-desc">
+      Aprende los mandos antes de encender el motor y tomar el asfalto.
+    </p>
+
+    <div class="controls-container">
+      <div class="keys-visual">
+        <div class="keys-row">
+          <div class="key-cap">W<span>ACEL</span></div>
+        </div>
+        <div class="keys-row">
+          <div class="key-cap">A<span>IZQ</span></div>
+          <div class="key-cap">S<span>FRENO</span></div>
+          <div class="key-cap">D<span>DER</span></div>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">
+          Tambi&eacute;n compatible con las <strong>Flechas Direccionales (&blacktriangle; &blacktriangledown; &#9668; &#9658;)</strong>
+        </div>
+      </div>
+
+      <div class="controls-info">
+        <ul class="controls-list">
+          <li>
+            <div class="control-badge">W / &blacktriangle;</div>
+            <div class="control-text">
+              <h5>Acelerador Frontal</h5>
+              <p>Impulsa el b&oacute;lido hacia adelante a 320 px/s sobre el asfalto.</p>
+            </div>
+          </li>
+          <li>
+            <div class="control-badge">S / &blacktriangledown;</div>
+            <div class="control-text">
+              <h5>Freno y Marcha Atr&aacute;s</h5>
+              <p>Disminuye la inercia para esquivar rocas o maniobrar en curvas.</p>
+            </div>
+          </li>
+          <li>
+            <div class="control-badge">A / D / &#9668; &#9658;</div>
+            <div class="control-text">
+              <h5>Direcci&oacute;n Lateral</h5>
+              <p>Mueve el coche de carril para recolectar comodines y evitar colisiones.</p>
+            </div>
+          </li>
+          <li>
+            <div class="control-badge">ESPACIO / CLIC</div>
+            <div class="control-text">
+              <h5>Avance de Narrativa &amp; Men&uacute;s</h5>
+              <p>Avanza los di&aacute;logos cinem&aacute;ticos de la historia de Sof&iacute;a y reinicia tras ser atrapado.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- LLAMADO A LA ACCI&Oacute;N FINAL (REDIRECT AL JUEGO) -->
+  <section id="jugar" class="cta-final">
+    <div class="section-tag" style="background: rgba(255, 23, 68, 0.2); border-color: var(--danger); color: #ff6b81;">
+      EL DESTINO DE SOF&Iacute;A EST&Aacute; EN TUS MANOS
+    </div>
+    <h2>&iquest;LISTO PARA CORRER POR SU VIDA?</h2>
+    <p>
+      El cron&oacute;metro no se detiene y la patrulla de Don Temu est&aacute; a tus espaldas. Pisa el acelerador a fondo, esquiva las bombas y cruza la meta final.
+    </p>
+
+    <!-- BOT&Oacute;N QUE REDIRIGE DIRECTO AL JUEGO -->
+    <a href="./Juego2/dist/index.html" class="btn-launch-game" id="btnLaunchGame">
+      <span>&#127937; &iexcl;INICIAR JUEGO AHORA! &#127950;&#65039;&#128168;</span>
+    </a>
+
+    <div class="cta-subtext">
+      <span>&#10003; 100% Gratis</span>
+      <span>&#10003; Sin Descargas ni Esperas</span>
+      <span>&#10003; Directo en tu Navegador</span>
+      <span>&#10003; 60 Cuadros por Segundo</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p style="margin-bottom: 8px;">
+      <strong>Need for Speed: Temu's Edition</strong> &mdash; Desarrollado por <strong>Erick Caicedo</strong> con <strong>Phaser 3</strong>.
+    </p>
+    <p style="font-size: 0.8rem; color: #64748b;">
+      Laboratorio de Juegos Interactivos &bull; Proyecto Acad&eacute;mico &amp; Creativo
+    </p>
+  </footer>
+
+  <script>
+    // Interactividad en el preview
+    const playerCar = document.getElementById('interactivePlayerCar');
+    document.addEventListener('keydown', (e) => {
+      if (['KeyA', 'ArrowLeft'].includes(e.code)) {
+        playerCar.style.left = 'calc(50% - 60px)';
+      } else if (['KeyD', 'ArrowRight'].includes(e.code)) {
+        playerCar.style.left = 'calc(50% + 20px)';
+      } else if (['KeyW', 'ArrowUp', 'KeyS', 'ArrowDown'].includes(e.code)) {
+        playerCar.style.left = 'calc(50% - 22px)';
+      }
+    });
+
+    document.getElementById('btnLaunchGame').addEventListener('click', () => {
+      console.log('Iniciando Need for Speed: Temu\'s Edition...');
+    });
+  </script>
+</body>
+</html>
