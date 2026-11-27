@@ -12,6 +12,11 @@ const config = {
   width: 1024,
   height: 768,
   backgroundColor: '#1a472a',
+  // Escala el lienzo 1024×768 para que quepa completo en la ventana (mantiene la proporción)
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
   physics: {
     default: 'arcade',
     arcade: {

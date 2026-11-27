@@ -285,7 +285,9 @@ export default class GameScene extends Phaser.Scene {
     for (let i = 0; i < count; i++) {
       const seg = SEGMENTS[Math.floor(rand() * SEGMENTS.length)];
       const rx = seg.cx + (rand() - 0.5) * (ROAD_W - 65);
-      const ry = seg.y1 + 140 + rand() * (seg.y2 - seg.y1 - 240);
+      let ry = seg.y1 + 140 + rand() * (seg.y2 - seg.y1 - 240);
+      // Zona de salida segura: ninguna roca junto a la salida (jugador en y=220)
+      if (seg === SEGMENTS[0] && ry < 360) ry += 260;
 
       const rock = this.rocks.create(rx, ry, 'rock');
       rock.setDepth(9);
@@ -822,6 +824,7 @@ export default class GameScene extends Phaser.Scene {
         level: this._level,
         progress,
         time: this._elapsedMs,
+        totalTime: this._totalTime, // solo niveles superados
       });
     });
   }
